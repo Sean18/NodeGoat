@@ -20,6 +20,7 @@ jobs:
         echo "(secret)URL  : ${{ secrets.BLACKDUCK_URL}}"
   job2:
     name: Second Job
+    runs-on: ubuntu-latest
     steps:
     - run: echo "second job output"
 
