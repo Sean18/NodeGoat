@@ -1,7 +1,7 @@
 
 name: Test Stuff
 
-on: [merge]
+on: [deleted]
 
 jobs:
   job1:
