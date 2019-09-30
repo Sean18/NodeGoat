@@ -25,13 +25,13 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1      
-    - run: npm install        
+    #- run: npm install        
         
     - name: Synopsys Detect Action
       uses: blackducksoftware/github-action@1.0.1
-      #env:
-        #BLACKDUCK_URL: ${{ secrets.POLARIS_URL}}
-        #BLACKDUCK_API_TOKEN: ${{ secrets.POLARIS_API_TOKEN}}
+      env:
+        BLACKDUCK_URL: ${{ secrets.POLARIS_URL}}
+        BLACKDUCK_API_TOKEN: ${{ secrets.POLARIS_API_TOKEN}}
       with:
         args: --detect.polaris.enable=true --detect.tools=POLARIS --polaris.access.token=${{ secrets.POLARIS_API_TOKEN}} --polaris.url=${{ secrets.POLARIS_URL}}
 
