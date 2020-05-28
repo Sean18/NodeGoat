@@ -14,9 +14,11 @@ jobs:
       run: |
         curl https://sipse.polaris.synopsys.com/api/tools/polaris_cli-linux64.zip -LO
         unzip -j polaris_cli-linux64.zip
-        #chmod +X ./polaris
         
     - name: Polaris Setup
+      env:
+        POLARIS_ACCESS_TOKEN: jucv66clmp3il7mpt97gts2d0g2lbq5omulrt3vfo38q9u6j7fpg
+        POLARIS_SERVER_URL: https://sipse.polaris.synopsys.com
       run: ./polaris setup
       
     #- name: npm install
