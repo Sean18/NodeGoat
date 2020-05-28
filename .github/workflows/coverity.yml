@@ -12,6 +12,12 @@ jobs:
     - uses: actions/setup-node@v1      
     - name: Download Polaris CLI
       run: curl https://sipse.polaris.synopsys.com/api/tools/polaris_cli-linux64.zip -LO
+    - name: unzip
+      run: unzip polaris_cli-linux64.zip
+      
+    - name: Polaris Setup
+      run: ./polaris setup
+      
     #- name: npm install
     #  run: npm install        
         
