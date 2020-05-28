@@ -14,7 +14,7 @@ jobs:
       run: |
         curl https://sipse.polaris.synopsys.com/api/tools/polaris_cli-linux64.zip -LO
         unzip -j polaris_cli-linux64.zip
-        chmod +X ./polaris.sh
+        #chmod +X ./polaris
         
     - name: Polaris Setup
       run: ./polaris setup
