@@ -13,7 +13,7 @@ jobs:
     - name: Download Polaris CLI
       run: |
         curl https://sipse.polaris.synopsys.com/api/tools/polaris_cli-linux64.zip -LO
-        unzip polaris_cli-linux64.zip
+        unzip -j polaris_cli-linux64.zip
         chmod +X ./polaris.sh
         
     - name: Polaris Setup
