@@ -1,10 +1,11 @@
 
 name: Test Stuff
 
-on: [push]
+on: [delete]
 
 jobs:
-  build:
+  job1:
+    name: First Job
     runs-on: ubuntu-latest
 
     steps:
@@ -17,4 +18,10 @@ jobs:
         echo "URL  : $BLACKDUCK_URL"
         echo "(secret)Token  : ${{ secrets.BLACKDUCK_API_TOKEN}}"
         echo "(secret)URL  : ${{ secrets.BLACKDUCK_URL}}"
+  job2:
+    name: Second Job
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "second job output"
+
         
