@@ -16,13 +16,15 @@ jobs:
         ls -all
         unzip -q -d ./coverity cov-analysis-win64-2020.06.zip
         ls -all
+        cd coverity
+        ls -all
         
     - name: npm install
       run: npm install
         
     - name: Cov-Build              
       run: |
-        ./coverity/bin/cov-configure --javascript
+        ./coverity/cov-analysis-win64-2020.06/bin/cov-configure --javascript
         ./coverity/bin/cov-build --dir idir --no-command --fs-capture-search .
         
       
