@@ -14,6 +14,8 @@ jobs:
       run: |
         curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-linux64-2020.06.tar.gz -o cov-analysis-linux64-2020.06.tar.gz -LO -u admin:SIGpass8!
         tar -xf cov-analysis-linux64-2020.06.tar.gz
+        curl http://52.188.212.142:8080/downloadFile.htm?fn=analysis-license.dat -o license.dat -LO -u admin:SIGpass8!
+        mv license.dat ./cov-analysis-linux64-2020.06/bin
                 
     - name: npm install
       run: npm install
