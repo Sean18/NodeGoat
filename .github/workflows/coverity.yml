@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-node@v1      
     - name: Download Polaris CLI
       run: |
-        curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-win64-2020.06.zip -LO -u admin:SIGpass8!
+        curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-win64-2020.06.zip -o cov-analysis-win64-2020.06.zip -LO -u admin:SIGpass8!
         ls -all
         unzip cov-analysis-win64-2020.06.zip -q -d ./coverity
         ls -all
