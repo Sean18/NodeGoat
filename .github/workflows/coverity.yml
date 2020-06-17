@@ -12,11 +12,13 @@ jobs:
     - uses: actions/setup-node@v1      
     - name: Download Polaris CLI
       run: |
-        curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-win64-2020.06.zip -o cov-analysis-win64-2020.06.zip -LO -u admin:SIGpass8!
+        curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-linux64-2020.06.tar.gz -o cov-analysis-linux64-2020.06.tar.gz -LO -u admin:SIGpass8!
         ls -all
-        unzip -q -d ./coverity cov-analysis-win64-2020.06.zip
+        tar -xf cov-analysis-linux64-2020.06.tar.gz -C ./coverity
         ls -all
-        cd coverity/cov-analysis-win64-2020.06
+        cd coverity
+        ls -all
+        cd cov-analysis-linux64-2020.06
         ls -all
         
     - name: npm install
@@ -24,7 +26,7 @@ jobs:
         
     - name: Cov-Build              
       run: |
-        ./coverity/cov-analysis-win64-2020.06/bin/cov-configure --javascript
+        ./coverity/cov-analysis-linux64-2020.06/bin/cov-configure --javascript
         ./coverity/bin/cov-build --dir idir --no-command --fs-capture-search .
         
       
