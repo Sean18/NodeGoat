@@ -14,9 +14,7 @@ jobs:
       run: |
         curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-linux64-2020.06.tar.gz -o cov-analysis-linux64-2020.06.tar.gz -LO -u admin:SIGpass8!
         ls -all
-        tar -xf cov-analysis-linux64-2020.06.tar.gz -C ./coverity
-        ls -all
-        cd coverity
+        tar -xf cov-analysis-linux64-2020.06.tar.gz
         ls -all
         cd cov-analysis-linux64-2020.06
         ls -all
