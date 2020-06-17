@@ -1,6 +1,6 @@
 
 name: Run Coverity On Polaris
-on: [push]
+on: [release]
 
 jobs:
   synopsys_coverity:
@@ -12,17 +12,19 @@ jobs:
     - uses: actions/setup-node@v1      
     - name: Download Polaris CLI
       run: |
-        curl http://52.188.212.142:8080/downloadFile.htm?fn=cov-analysis-win64-2020.06.zip -LO -u admin:SIGpass8!
-        unzip cov-analysis-win64-2020.06.zip -q -d ./coverity
+        curl https://sipse.polaris.synopsys.com/api/tools/polaris_cli-linux64.zip -LO
+        unzip -j polaris_cli-linux64.zip
         
     - name: npm install
       run: npm install
         
-    - name: Cov-Build              
+    - name: Polaris Capture
+      env:
+        POLARIS_ACCESS_TOKEN: jucv66clmp3il7mpt97gts2d0g2lbq5omulrt3vfo38q9u6j7fpg
+        POLARIS_SERVER_URL: https://sipse.polaris.synopsys.com
       run: |
-        ./coverity/bin/cov-configure --javascript
-        ./coverity/bin/cov-build --dir idir --no-command --fs-capture-search .
-        
+        ./polaris setup --project-name SeanNodeGoatTestGitHubAction
+        ./polaris analyze
       
     #- name: npm install
     #  run: npm install        

@@ -1,5 +1,5 @@
 name: Run Synopsys Detect
-on: [push]
+on: [release]
 
 jobs:
   synopsys_detect_blackduck:

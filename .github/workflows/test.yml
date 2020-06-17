@@ -1,7 +1,7 @@
 
 name: Test Stuff
 
-on: [push]
+on: [release]
 
 jobs:
   build:
