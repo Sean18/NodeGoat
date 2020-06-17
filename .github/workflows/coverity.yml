@@ -16,7 +16,7 @@ jobs:
         ls -all
         unzip -q -d ./coverity cov-analysis-win64-2020.06.zip
         ls -all
-        cd coverity
+        cd coverity/cov-analysis-win64-2020.06
         ls -all
         
     - name: npm install
